@@ -16,11 +16,11 @@ public class Game extends Canvas implements Runnable {
 	private Thread thread;
 	private JFrame frame;
 	private boolean running = false;
-	
+
 	public Game() {
 		Dimension size = new Dimension(width * scale, height * scale);
 		setPreferredSize(size);
-		
+
 		frame = new JFrame();
 	}
 
@@ -38,18 +38,18 @@ public class Game extends Canvas implements Runnable {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void run() {
 		while (running) {
 			update();
 			render();
 		}
 	}
-	
+
 	public void update() {
-		
+
 	}
-	
+
 	public void render() {
 		BufferStrategy bs = getBufferStrategy();
 		if (bs == null) {
@@ -57,7 +57,7 @@ public class Game extends Canvas implements Runnable {
 			return;
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		Game game = new Game();
 		game.frame.setResizable(false);
@@ -67,7 +67,7 @@ public class Game extends Canvas implements Runnable {
 		game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		game.frame.setLocationRelativeTo(null);
 		game.frame.setVisible(true);
-		
+
 		game.start();
 	}
 }
